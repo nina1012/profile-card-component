@@ -1,0 +1,120 @@
+:root {
+  /* Primary colors */
+  --dark-cyan: hsl(185, 75%, 39%);
+  --dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+
+  /* Neutral colors */
+  --dark-gray: hsl(0, 0%, 59%);
+
+  --radius: 15px;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  min-height: 100vh;
+  background-image: url(/images/bg-pattern-top.svg),
+    url(/images/bg-pattern-bottom.svg);
+  background-position: -75rem -55rem, 15rem 40rem;
+  background-repeat: no-repeat;
+  background-color: var(--dark-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: 10px 0 10px 0 rgba(71, 71, 71, 0.1);
+  display: grid;
+  grid-template-rows: 1fr 11rem 7rem;
+  grid-gap: 2rem;
+  position: relative;
+  width: 35rem;
+}
+
+/* 1st row */
+.image-bg img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+/* 2nd row */
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+}
+
+.user-image {
+  border: 5px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 52.5%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 6rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info > .gray-text {
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.name,
+.info-number {
+  font-weight: 700;
+}
+
+.name > span {
+  font-size: 1.65rem;
+}
+
+.gray-text {
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+/* 3th row */
+.social-stats {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1.5rem 4rem;
+  border-top: hsl(227, 100%, 93%) 1px solid;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-position: -20rem -45rem, 90rem 50rem;
+  }
+}
